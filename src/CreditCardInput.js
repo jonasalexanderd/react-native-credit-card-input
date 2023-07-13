@@ -7,7 +7,9 @@ import ReactNative, {
   StyleSheet,
   ScrollView,
   Dimensions,
+  TextInput,
 } from "react-native";
+import ViewPropTypes from "deprecated-react-native-prop-types";
 
 import CreditCard from "./CardView";
 import CCInput from "./CCInput";
@@ -46,9 +48,9 @@ export default class CreditCardInput extends Component {
     labels: PropTypes.object,
     placeholders: PropTypes.object,
 
-    labelStyle: Text.propTypes.style,
+    // labelStyle: Text.propTypes.style,
     // inputStyle: Text.propTypes.style,
-    // inputContainerStyle: ViewPropTypes.style,
+    inputContainerStyle: ViewPropTypes.style,
 
     validColor: PropTypes.string,
     invalidColor: PropTypes.string,
@@ -68,14 +70,14 @@ export default class CreditCardInput extends Component {
   static defaultProps = {
     cardViewSize: {},
     labels: {
-      name: "Nombre y Apellido",
-      number: "Número de tarjeta",
-      expiry: "Expiración",
+      name: "CARDHOLDER'S NAME",
+      number: "CARD NUMBER",
+      expiry: "EXPIRY",
       cvc: "CVC/CCV",
-      postalCode: "Código postal",
+      postalCode: "POSTAL CODE",
     },
     placeholders: {
-      name: "Nombre Completo",
+      name: "Full Name",
       number: "1234 5678 1234 5678",
       expiry: "MM/YY",
       cvc: "CVC",
